@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TrueBridge đồng hành cùng khách hàng trên hành trình định cư, visa và quốc tịch Mỹ, Canada.">
+  <title>TrueBridge | Định cư Mỹ & Canada</title>
+  <style>
+    :root{
+      --navy:#0f2d52;--navy-dark:#081d36;--gold:#c9a227;--light:#f6f8fb;
+      --white:#fff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;
+      --radius:18px;--shadow:0 16px 42px rgba(15,45,82,.12)
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:76px}
+    body{font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.6;background:var(--white)}
+    a{text-decoration:none;color:inherit}.container{width:min(1120px,calc(100% - 40px));margin:auto}
+    .section{padding:82px 0}.section.alt{background:var(--light)}
+    .title{max-width:680px;margin:0 auto 42px;text-align:center}
+    .title span{color:#9a741b;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+    .title h2{margin-top:8px;color:var(--navy);font-size:clamp(30px,4vw,42px);line-height:1.2}
+    .title p{margin-top:12px;color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border:1px solid transparent;border-radius:999px;font-weight:700;transition:.25s}
+    .btn:hover{transform:translateY(-2px)}.btn-gold{color:#fff;background:var(--gold)}
+    .btn-gold:hover{background:#ae861f}.btn-outline{color:#fff;border-color:rgba(255,255,255,.6)}
+    header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border);backdrop-filter:blur(10px)}
+    nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .logo{color:var(--navy);font-size:27px;font-weight:800}.logo span{color:var(--gold)}
+    .menu{display:flex;align-items:center;gap:24px}.menu a{font-size:14px;font-weight:600;color:#334155}.menu a:hover{color:#9a741b}
+    .hero{min-height:680px;display:flex;align-items:center;color:#fff;background:linear-gradient(90deg,rgba(5,24,47,.95),rgba(15,45,82,.76),rgba(15,45,82,.3)),url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat}
+    .hero-content{max-width:720px;padding:80px 0}.eyebrow{display:inline-block;margin-bottom:18px;padding:7px 13px;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(255,255,255,.08);color:#f4d893;font-size:13px;font-weight:700}
+    .hero h1{font-size:clamp(43px,6vw,68px);line-height:1.08;letter-spacing:-2px}.hero h1 span{color:#f4d893}
+    .hero p{max-width:630px;margin:22px 0 30px;color:rgba(255,255,255,.86);font-size:19px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}.trust{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px;font-size:14px}.trust span::before{content:"✓";margin-right:7px;color:#62d7a2;font-weight:800}
+    .grid{display:grid;gap:22px}.benefits{grid-template-columns:repeat(4,1fr)}
+    .card{padding:28px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);transition:.25s}
+    .card:hover{transform:translateY(-5px);border-color:rgba(201,162,39,.55);box-shadow:var(--shadow)}
+    .icon{width:50px;height:50px;margin-bottom:18px;display:grid;place-items:center;border-radius:14px;background:#eaf1f8;color:var(--navy);font-size:23px}
+    .card h3{margin-bottom:8px;color:var(--navy);font-size:19px}.card p{color:var(--muted);font-size:14px}
+    .destinations{grid-template-columns:repeat(2,1fr)}
+    .destination{min-height:410px;padding:32px;display:flex;align-items:flex-end;color:#fff;border-radius:24px;background-position:center;background-size:cover;overflow:hidden}
+    .canada{background-image:linear-gradient(rgba(8,29,54,.12),rgba(8,29,54,.96)),url("https://images.unsplash.com/photo-1517935706615-2717063c2225?auto=format&fit=crop&w=1000&q=85")}
+    .usa{background-image:linear-gradient(rgba(8,29,54,.12),rgba(8,29,54,.96)),url("https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=1000&q=85")}
+    .destination h3{font-size:31px}.destination p{margin:8px 0 16px;color:rgba(255,255,255,.8)}.destination ul{margin:0 0 22px 20px}
+    .process{grid-template-columns:repeat(5,1fr)}.step{text-align:center}.number{width:62px;height:62px;margin:0 auto 16px;display:grid;place-items:center;border-radius:50%;color:#fff;background:var(--navy);font-weight:800;box-shadow:0 10px 24px rgba(15,45,82,.2)}
+    .step h3{color:var(--navy);font-size:16px}.step p{margin-top:6px;color:var(--muted);font-size:13px}
+    .about{max-width:800px;margin:auto;text-align:center;color:var(--muted);font-size:17px}
+    .contact{color:#fff;background:linear-gradient(130deg,var(--navy-dark),var(--navy))}.contact-wrap{grid-template-columns:.9fr 1.1fr;align-items:center;gap:54px}
+    .contact-copy h2{font-size:clamp(34px,4vw,48px);line-height:1.15}.contact-copy p{margin-top:16px;color:rgba(255,255,255,.75)}.contact-info{display:grid;gap:8px;margin-top:24px;font-size:14px}
+    form{padding:32px;background:#fff;border-radius:22px;box-shadow:var(--shadow)}form h3{color:var(--navy);font-size:24px}.field{width:100%;margin-top:13px;padding:14px;border:1px solid var(--border);border-radius:11px;background:var(--light);outline:none}.field:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,162,39,.12)}textarea.field{min-height:100px;resize:vertical}button.btn{width:100%;margin-top:14px;cursor:pointer}
+    .notice{display:none;margin-top:12px;padding:11px;border-radius:10px;color:#166044;background:#e8f7f1;font-size:13px}
+    footer{padding:38px 20px;text-align:center;color:rgba(255,255,255,.78);background:#05172a}footer h3{color:#fff;font-size:22px}footer p{margin-top:7px;font-size:13px}footer a{color:#f4d893}
+    @media(max-width:900px){.menu{display:none}.benefits,.process{grid-template-columns:repeat(2,1fr)}.contact-wrap{grid-template-columns:1fr}}
+    @media(max-width:650px){.section{padding:66px 0}.hero{min-height:620px}.hero h1{letter-spacing:-1px}.actions{flex-direction:column}.actions .btn{width:100%}.trust{flex-direction:column;gap:9px}.benefits,.destinations,.process{grid-template-columns:1fr}.destination{min-height:390px}form{padding:24px 20px}}
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container" aria-label="Điều hướng chính">
+      <a class="logo" href="#home">True<span>Bridge</span></a>
+      <div class="menu">
+        <a href="#services">Lợi ích</a><a href="#destinations">Điểm đến</a><a href="#process">Lộ trình</a><a href="#about">Giới thiệu</a><a href="#contact">Liên hệ</a>
+      </div>
+      <a class="btn btn-gold" href="#contact">Tư vấn miễn phí</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div class="eyebrow">Định cư, visa và quốc tịch</div>
+        <h1>Cầu nối tin cậy cho hành trình <span>an cư tại Mỹ và Canada</span></h1>
+        <p>TrueBridge đồng hành cùng khách hàng trong quá trình tìm hiểu, chuẩn bị hồ sơ và lựa chọn lộ trình phù hợp cho kế hoạch tương lai.</p>
+        <div class="actions">
+          <a class="btn btn-gold" href="#contact">Đăng ký tư vấn</a>
+          <a class="btn btn-outline" href="#destinations">Khám phá chương trình</a>
+        </div>
+        <div class="trust"><span>Thông tin rõ ràng</span><span>Lộ trình phù hợp</span><span>Đồng hành tận tâm</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="title"><span>TrueBridge</span><h2>Tại sao lựa chọn chúng tôi?</h2><p>Dịch vụ được xây dựng theo hướng rõ ràng, trực quan và phù hợp với nhu cầu của từng khách hàng.</p></div>
+        <div class="grid benefits">
+          <article class="card"><div class="icon">⌕</div><h3>Đánh giá nhu cầu</h3><p>Tìm hiểu mục tiêu trước khi đề xuất hướng tiếp cận.</p></article>
+          <article class="card"><div class="icon">◇</div><h3>Lộ trình rõ ràng</h3><p>Trình bày từng bước để khách hàng dễ theo dõi.</p></article>
+          <article class="card"><div class="icon">✓</div><h3>Thông tin minh bạch</h3><p>Trao đổi rõ về hồ sơ và phạm vi dịch vụ.</p></article>
+          <article class="card"><div class="icon">∞</div><h3>Đồng hành tận tâm</h3><p>Hỗ trợ khách hàng trong từng giai đoạn.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="destinations">
+      <div class="container">
+        <div class="title"><span>Điểm đến</span><h2>Bạn đang quan tâm Mỹ hay Canada?</h2><p>Lựa chọn điểm đến để bắt đầu tìm hiểu các chương trình phù hợp với kế hoạch của bạn.</p></div>
+        <div class="grid destinations">
+          <article class="destination canada"><div><h3>🇨🇦 Canada</h3><p>Tìm hiểu các lộ trình học tập, làm việc, bảo lãnh gia đình và định cư.</p><ul><li>Express Entry</li><li>Provincial Nominee Program</li><li>Family Sponsorship</li></ul><a class="btn btn-gold" href="#contact">Tôi quan tâm Canada</a></div></article>
+          <article class="destination usa"><div><h3>🇺🇸 Hoa Kỳ</h3><p>Khám phá các lựa chọn đầu tư, việc làm, đoàn tụ gia đình và quốc tịch.</p><ul><li>EB-5</li><li>Employment-Based Visa</li><li>Family Immigration</li></ul><a class="btn btn-gold" href="#contact">Tôi quan tâm Hoa Kỳ</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="title"><span>Lộ trình</span><h2>Hành trình cùng TrueBridge</h2><p>Quy trình đơn giản, dễ theo dõi qua năm bước chính.</p></div>
+        <div class="grid process">
+          <article class="step"><div class="number">01</div><h3>Tiếp nhận nhu cầu</h3><p>Tìm hiểu mục tiêu của khách hàng.</p></article>
+          <article class="step"><div class="number">02</div><h3>Đánh giá thông tin</h3><p>Xem xét thông tin được cung cấp.</p></article>
+          <article class="step"><div class="number">03</div><h3>Đề xuất lộ trình</h3><p>Trao đổi hướng tiếp cận phù hợp.</p></article>
+          <article class="step"><div class="number">04</div><h3>Chuẩn bị hồ sơ</h3><p>Hướng dẫn chuẩn bị nội dung cần thiết.</p></article>
+          <article class="step"><div class="number">05</div><h3>Đồng hành theo dõi</h3><p>Hỗ trợ theo phạm vi đã thống nhất.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="about">
+      <div class="container"><div class="title"><span>Về chúng tôi</span><h2>Cầu nối tin cậy cho những ước mơ an cư</h2></div><p class="about">TrueBridge mang ý nghĩa trở thành cầu nối đáng tin cậy, giúp khách hàng từng bước tiến gần hơn đến kế hoạch sinh sống và xây dựng tương lai tại Mỹ hoặc Canada.</p></div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container grid contact-wrap">
+        <div class="contact-copy"><h2>Sẵn sàng bắt đầu hành trình của bạn?</h2><p>Để lại thông tin để TrueBridge tìm hiểu nhu cầu và trao đổi bước tiếp theo với bạn.</p><div class="contact-info"><span>📍 Thành phố Hồ Chí Minh, Việt Nam</span><span>🌐 <a href="https://truebrigde.com.vn" target="_blank" rel="noopener noreferrer">truebrigde.com.vn</a></span></div></div>
+        <form id="consultationForm">
+          <h3>Đăng ký tư vấn</h3>
+          <input class="field" type="text" name="name" placeholder="Họ và tên" autocomplete="name" required>
+          <input class="field" type="tel" name="phone" placeholder="Số điện thoại" autocomplete="tel" required>
+          <select class="field" name="destination" required><option value="">Quốc gia quan tâm</option><option value="Canada">Canada</option><option value="Hoa Kỳ">Hoa Kỳ</option><option value="Chưa xác định">Chưa xác định</option></select>
+          <textarea class="field" name="message" placeholder="Nhu cầu cần tư vấn"></textarea>
+          <button class="btn btn-gold" type="submit">Gửi yêu cầu tư vấn</button>
+          <div class="notice" id="formNotice">Cảm ơn bạn. Đây là giao diện mẫu, biểu mẫu chưa được kết nối với hệ thống nhận dữ liệu.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer><h3>TrueBridge</h3><p>Your Trusted Bridge to a New Future</p><p><a href="https://truebrigde.com.vn" target="_blank" rel="noopener noreferrer">truebrigde.com.vn</a></p></footer>
+
+  <script>
+    document.getElementById('consultationForm').addEventListener('submit', function(event){
+      event.preventDefault();
+      document.getElementById('formNotice').style.display='block';
+    });
+  </script>
+</body>
+</html>
